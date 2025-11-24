@@ -48,7 +48,7 @@ const productsData = [
   },
 ];
 
-export default function AguaPuraPaso1() {
+export default function SeleccionDeGarrafon() {
   const [products, setProducts] = useState(
     productsData.map((p) => ({ ...p, quantity: p.initialQuantity }))
   );
@@ -108,6 +108,7 @@ export default function AguaPuraPaso1() {
                 <div className="flex min-w-72 flex-col gap-2">
                   <p className="text-[#111418] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">
                     Paso 1: Seleccionar Garrafón
+                
                   </p>
                   <p className="text-[#617589] dark:text-gray-400 text-base font-normal leading-normal">
                     Elige los productos y cantidades que necesitas.

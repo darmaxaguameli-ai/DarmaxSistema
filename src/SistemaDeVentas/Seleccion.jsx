@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function DarMax() {
+export default function Seleccion() {
   return (
     <div className="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark min-h-screen">
       <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">

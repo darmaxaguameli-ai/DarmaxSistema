@@ -32,7 +32,7 @@ const productsData = [
 
 const MAX_GARRAFONES = 3;
 
-export default function AguaPuraPaso2AsignarGarrafones() {
+export default function AguaPuraPaso2AsignarGarrafonesInicial() {
   const [products, setProducts] = useState(
     productsData.map((p) => ({ ...p, quantity: p.initialQuantity }))
   );
