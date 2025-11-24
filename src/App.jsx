@@ -10,12 +10,20 @@ import Gastos from "./Gestion/Gastos";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 
+import OrderSelection from "./pages/OrderSelection";
+import RefillJugStepOne from "./pages/RefillJugStepOne";
+import RefillAssignStepTwo from "./pages/RefillAssignStepTwo";
+
 
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<DarmaxWelcome />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/pedidos" element={<OrderSelection />} />
+      <Route path="/pedidos/rellenar" element={<RefillJugStepOne />} />
+      <Route path="/pedidos/rellenar/asignar" element={<RefillAssignStepTwo />} />
 
       <Route path="/gestion" element={<GestionDashboard />}>
         <Route index element={<Resumen />} />
