@@ -4,18 +4,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#137fec",
-        "background-light": "#f6f7f8",
-        "background-dark": "#101922",
-      },
-      fontFamily: {
-        display: ["Inter", "sans-serif"],
-      },
-      borderRadius: {
-        DEFAULT: "0.25rem",
-        lg: "0.5rem",
-        xl: "0.75rem",
-        full: "9999px",
+        // 🎨 Paleta primaria
+        primary: "#137FEC",
+        secondary: "#A4D4FF",
+
+        // 🎨 Colores de sistema
+        success: "#28A745",
+        error: "#DC3545",
+        warning: "#FFC107",
+        info: "#17A2B8",
+
+        // 🎨 Neutrales
+        white: "#FFFFFF",
+        light: "#F6F7F8",
+        dark: "#111418",
+        "text-secondary": "#617589",
       },
     },
   },
