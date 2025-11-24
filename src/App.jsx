@@ -13,17 +13,20 @@ import Login from "./pages/Login";
 import OrderSelection from "./pages/OrderSelection";
 import RefillJugStepOne from "./pages/RefillJugStepOne";
 import RefillAssignStepTwo from "./pages/RefillAssignStepTwo";
+import DeliveryMethodStepThree from "./pages/DeliveryMethodStepThree";
 
 
 
 function App() {
   return (
-    <Routes>
+    <Routes>  
       <Route path="/" element={<DarmaxWelcome />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/registro" element={<Register />} />
       <Route path="/pedidos" element={<OrderSelection />} />
       <Route path="/pedidos/rellenar" element={<RefillJugStepOne />} />
       <Route path="/pedidos/rellenar/asignar" element={<RefillAssignStepTwo />} />
+      <Route path="/pedidos/rellenar/entrega" element={<DeliveryMethodStepThree />} />
 
       <Route path="/gestion" element={<GestionDashboard />}>
         <Route index element={<Resumen />} />
@@ -32,8 +35,7 @@ function App() {
         <Route path="gastos" element={<Gastos />} />
       </Route>
 
-            <Route path="/login" element={<Login />} />
-            <Route path="/registro" element={<Register />} />
+
 ¿
     </Routes>
   );

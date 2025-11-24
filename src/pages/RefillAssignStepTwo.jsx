@@ -60,7 +60,7 @@ const RefillAssignStepTwo = () => {
 
   const handleContinue = () => {
     console.log("Asignación final:", products);
-    navigate("/pedidos/rellenar/resumen", {
+    navigate("/pedidos/rellenar/entrega", {
       state: {
         fromStepTwo: products,
         maxJugs,
@@ -161,7 +161,7 @@ const RefillAssignStepTwo = () => {
             className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-8 w-full sm:w-auto bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             disabled={totalAssigned !== maxJugs}
           >
-            <span className="truncate">Continuar al Resumen</span>
+            <span className="truncate">Continuar al Paso 3</span>
           </button>
         </div>
       </footer>
