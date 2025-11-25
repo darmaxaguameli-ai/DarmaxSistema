@@ -44,10 +44,6 @@ function App() {
       // Ruta de Venta Mostrador
       <Route path="/venta-mostrador" element={<VentaMostrador />} />
 
-      // Rutas de autenticación
-      <Route path="/login" element={<Login />} />
-      <Route path="/registro" element={<Register />} />
-
     </Routes>
   );
 }
