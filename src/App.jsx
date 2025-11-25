@@ -6,6 +6,7 @@ import Resumen from "./Gestion/Resumen";
 import Inventario from "./Gestion/Inventario";
 import Ingresos from "./Gestion/Ingresos";
 import Gastos from "./Gestion/Gastos";
+import VentaMostrador from "./VentaMostrador/VentaMostrador";
 
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -23,10 +24,12 @@ function App() {
         <Route path="ingresos" element={<Ingresos />} />
         <Route path="gastos" element={<Gastos />} />
       </Route>
+      
+      
+      <Route path="/venta-mostrador" element={<VentaMostrador />} />
 
-            <Route path="/login" element={<Login />} />
-            <Route path="/registro" element={<Register />} />
-¿
+      <Route path="/login" element={<Login />} />
+      <Route path="/registro" element={<Register />} />
     </Routes>
   );
 }
