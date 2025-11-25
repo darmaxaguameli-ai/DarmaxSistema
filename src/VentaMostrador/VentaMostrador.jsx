@@ -8,6 +8,7 @@ import PosHeader from "./PosHeader";
 import CashDrawerModal from "./CashDrawerModal";
 import CloseRegisterModal from "./CloseRegisterModal";
 import StartDayModal from "./StartDayModal";
+import PasswordModal from "./PasswordModal"; // Added import
 
 import apiClient from "../api/apiClient";
 
@@ -33,6 +34,7 @@ const VentaMostrador = () => {
     const [isCashDrawerModalOpen, setIsCashDrawerModalOpen] = useState(false);
     const [cashDrawerActionType, setCashDrawerActionType] = useState('in');
     const [isCloseRegisterModalOpen, setIsCloseRegisterModalOpen] = useState(false);
+    const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false); // Added state
 
     // Memoized calculations
     const subtotal = useMemo(() => orderItems.reduce((sum, item) => sum + item.price * item.quantity, 0), [orderItems]);
@@ -155,6 +157,16 @@ const VentaMostrador = () => {
         setIsCashDrawerModalOpen(true);
     };
 
+    // New handlers for password protection
+    const handleRequestCloseRegister = () => {
+        setIsPasswordModalOpen(true);
+    };
+
+    const handlePasswordConfirm = () => {
+        setIsPasswordModalOpen(false);
+        setIsCloseRegisterModalOpen(true);
+    };
+
     if (!isSessionActive) {
         return <StartDayModal onStartSession={handleStartSession} />;
     }
@@ -162,10 +174,9 @@ const VentaMostrador = () => {
     return (
         <div className="bg-light dark:bg-dark h-screen flex flex-col font-display text-[#111418] dark:text-white">
             <PosHeader 
-                cashInDrawer={cashInDrawer}
                 onPayIn={handleOpenPayIn}
                 onPayOut={handleOpenPayOut}
-                onCloseRegister={() => setIsCloseRegisterModalOpen(true)}
+                onCloseRegister={handleRequestCloseRegister} // Modified
             />
             <div className="flex flex-1 overflow-hidden p-6 pt-0">
                 <div className="flex-1 pr-6 overflow-y-auto">
@@ -212,6 +223,12 @@ const VentaMostrador = () => {
                 onClose={() => setIsCashDrawerModalOpen(false)}
                 onConfirm={handleCashDrawerAction}
                 defaultType={cashDrawerActionType}
+            />
+            {/* Password Modal Added */}
+            <PasswordModal
+                isOpen={isPasswordModalOpen}
+                onClose={() => setIsPasswordModalOpen(false)}
+                onConfirm={handlePasswordConfirm}
             />
             <CloseRegisterModal 
                 isOpen={isCloseRegisterModalOpen}
